@@ -31,3 +31,10 @@ The trade-off is explicit: this is not a general NLP parser. It recognises the f
 ## Edge you will hit
 
 `today at 5` means 05:00 on the current day, not 17:00. There is no 12-hour / AM-PM handling; hours are 0–23. If you need `5pm`, parse it yourself before calling — or add a layer that does so, but do not expect this library to guess.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
