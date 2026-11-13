@@ -1,6 +1,6 @@
 [project]
 name = "time-expression-normalizer-lib"
-version = "0.1.2"
+version = "0.1.3"
 description = "Parses natural language time expressions into UTC datetime objects"
 requires-python = ">=3.10"
 dependencies = []
